@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainView">
+
     <include
         android:id="@+id/include"
         layout="@layout/activity_maps"
@@ -15,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/zoom_in_button"
         android:layout_width="wrap_content"
@@ -26,6 +28,7 @@
         android:src="@android:drawable/btn_plus"
         app:layout_constraintBottom_toTopOf="@+id/zoom_out_button"
         app:layout_constraintStart_toStartOf="parent" />
+
     <ImageButton
         android:id="@+id/zoom_out_button"
         android:layout_width="wrap_content"
@@ -36,4 +39,58 @@
         android:src="@android:drawable/btn_minus"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/accellerationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="104dp"
+        android:text="Accelleration"
+        android:gravity="center"
+        android:background="@android:color/holo_red_light"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <Button
+        android:id="@+id/clearMemoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear Memory"
+        android:onClick="clearMemory"
+        android:gravity="center"
+        android:background="@android:color/holo_red_light"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="@+id/include" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/circleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:onClick="toggleAcc"
+        android:clickable="true"
+        app:backgroundTint="#50ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/crossButton"
+        app:layout_constraintEnd_toStartOf="@+id/crossButton"
+        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/crossButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:onClick="hideButtons"
+        app:backgroundTint="#50ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_delete" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
